@@ -14,6 +14,20 @@ class PasswordGeneratorTest extends TestCase {
     $password = $generator->generate();
 
     $this->assertIsString($password);
-    $this->assertSame(10, strlen($password));
+    $this->assertSame(PasswordGenerator::LENGTH, strlen($password));
+  }
+
+  #[Test]
+  public function itHas2SymbolsInDefaultPassword() {
+    $generator = new PasswordGenerator();
+    $password = $generator->generate();
+
+    $symbolCount = 0;
+    foreach (str_split($password) as $char) {
+        if (str_contains(PasswordGenerator::SYMBOL_CHARS, $char)) {
+            $symbolCount++;
+        }
+    }
+    $this->assertSame(PasswordGenerator::SYMBOLS, $symbolCount);
   }
 }
