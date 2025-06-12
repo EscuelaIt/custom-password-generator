@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Escuelait\\CustomPasswordGenerator\\": "src/"
+            "Escuelait\\CustomPasswordGenerator\\": "src/",
+            "Tests\\": "tests"
         }
     },
     "authors": [
@@ -14,5 +15,7 @@
             "email": "miguel@escuela.it"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^12.2"
+    }
 }
