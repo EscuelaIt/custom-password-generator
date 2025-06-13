@@ -2,6 +2,8 @@
 
 namespace Escuelait\CustomPasswordGenerator;
 
+use InvalidArgumentException;
+
 class PasswordGenerator {
 
   private $length;
@@ -27,6 +29,11 @@ class PasswordGenerator {
 
     $characters = self::LETTERS . self::NUMBERS;
     $charactersLeft = $this->length - $this->symbols;
+
+    if($charactersLeft < 0) {
+      throw new InvalidArgumentException('The number of symbols cannot exceed the total password length');
+    }
+
     for ($i = 0; $i < $charactersLeft; $i++) {
         $password[] = $characters[random_int(0, strlen($characters) - 1)];
     }
@@ -35,4 +42,16 @@ class PasswordGenerator {
     return implode('', $password);
   }
 
+  public function length(int $length) {
+    $this->length = $length;
+    return $this;
+  }
+
+  public function symbols(int $symbols) {
+    $this->symbols = $symbols;
+    return $this;
+  }
+
 }
+
+
