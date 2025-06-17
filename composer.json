@@ -5,8 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Escuelait\\CustomPasswordGenerator\\": "src/",
-            "Tests\\": "tests"
+            "Escuelait\\CustomPasswordGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Escuelait\\Tests\\CustomPasswordGenerator\\": "tests/"
         }
     },
     "authors": [

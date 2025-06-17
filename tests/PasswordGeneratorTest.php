@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace EscuelaIT\Tests\CustomPasswordGenerator;
 
 use Escuelait\CustomPasswordGenerator\PasswordGenerator;
 use InvalidArgumentException;
